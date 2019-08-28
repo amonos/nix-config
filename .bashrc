@@ -33,7 +33,8 @@ function whichprovides() {
 alias sudo="sudo -E "
 alias ll="ls -la"
 alias mvnc="sh ~/work/mvnc.sh"
-alias glog='git log --graph --abbrev-commit --decorate --oneline'
+alias glog="git log --graph --abbrev-commit --decorate --oneline"
+alias pull-all="sh ~/work/pull-all.sh"
 
 export JAVA_HOME=/usr/lib/jvm/default
 export M2_HOME=/home/amonos/apache-maven-3.5.0
