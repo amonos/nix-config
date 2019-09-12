@@ -46,8 +46,8 @@ def checkout(branch):
     return execute_git_command(False, "checkout", branch).returncode
 
 
-def pull(branch):
-    return execute_git_command(False, "pull", branch).returncode
+def pull():
+    return execute_git_command(False, "pull").returncode
 
 
 def merge(branch):
@@ -61,7 +61,7 @@ def execute_in_valid_paths(path, branch):
         branch = get_branch(branch)
         if branch_exists(branch):
             if options.command == Command.PULL:
-                pull(branch)
+                pull()
             elif options.command == Command.MERGE:
                 if fetch(branch) == 0:
                     merge(branch)
