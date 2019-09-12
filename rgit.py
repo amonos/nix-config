@@ -61,7 +61,8 @@ def execute_in_valid_paths(path, branch):
         branch = get_branch(branch)
         if branch_exists(branch):
             if options.command == Command.PULL:
-                pull()
+                if checkout(branch) == 0:
+                    pull()
             elif options.command == Command.MERGE:
                 if fetch(branch) == 0:
                     merge(branch)
