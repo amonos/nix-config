@@ -49,7 +49,7 @@ def pull():
 
 
 def merge(branch):
-    return execute_git_command(False, "merge", branch).returncode
+    return execute_git_command(False, "merge", "origin/%s" % branch).returncode
 
 
 def execute_in_valid_paths(path, branch):
