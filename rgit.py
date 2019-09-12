@@ -29,13 +29,11 @@ def branch_exists(branch):
         return True
 
 
-def get_branch(branch):
-    if branch is None:
-        p = execute_git_command(True, "rev-parse", "--abbrev-ref", "HEAD")
-        (out, _) = p.communicate()
-        return out.decode("utf-8").strip()
-    else:
-        return branch
+def get_current_branch():
+    p = execute_git_command(True, "rev-parse", "--abbrev-ref", "HEAD")
+    (out, _) = p.communicate()
+    return out.decode("utf-8").strip()
+
 
 
 def fetch(branch):
@@ -58,10 +56,16 @@ def execute_in_valid_paths(path, branch):
     if os.path.exists(os.path.join(path, ".git")):
         print("%s>>>>>>>>>>>>>> %s%s" % (Colour.LIGHT_BLUE, path, Colour.DEFAULT))
         os.chdir(path)
-        branch = get_branch(branch)
+
+        if branch is None:
+            branch = get_current_branch()
+
         if branch_exists(branch):
             if options.command == Command.PULL:
-                if checkout(branch) == 0:
+                if get_current_branch() != branch:
+                    if checkout(branch) == 0:
+                        pull()
+                else:
                     pull()
             elif options.command == Command.MERGE:
                 if fetch(branch) == 0:
