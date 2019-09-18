@@ -7,6 +7,7 @@ from optparse import OptionParser
 class Command:
     PULL = "pull"
     MERGE = "merge"
+    CHECKOUT = "checkout"
 
 
 class Colour:
@@ -35,7 +36,6 @@ def get_current_branch():
     return out.decode("utf-8").strip()
 
 
-
 def fetch(branch):
     return execute_git_command(False, "fetch", "origin", branch).returncode
 
@@ -61,6 +61,8 @@ def execute_in_valid_paths(path, branch):
             branch = get_current_branch()
 
         if branch_exists(branch):
+            if options.command == Command.CHECKOUT:
+                checkout(branch)
             if options.command == Command.PULL:
                 if get_current_branch() != branch:
                     if checkout(branch) == 0:
