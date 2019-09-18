@@ -5,9 +5,9 @@ from optparse import OptionParser
 
 
 class Command:
+    CHECKOUT = "checkout"
     PULL = "pull"
     MERGE = "merge"
-    CHECKOUT = "checkout"
 
 
 class Colour:
@@ -77,8 +77,8 @@ def execute_in_valid_paths(path, branch):
 
 
 parser = OptionParser(usage="usage: %prog [options] [branch]", version="1.0.0")
-parser.add_option("-c", "--command", type="choice", choices=(Command.PULL, Command.MERGE), default=Command.PULL,
-                  dest="command")
+parser.add_option("-c", "--command", type="choice", choices=(Command.CHECKOUT, Command.PULL, Command.MERGE),
+                  default=Command.PULL, dest="command")
 parser.add_option("-w", "--workdir", default=os.getcwd(), dest="workdir")
 (options, args) = parser.parse_args()
 
