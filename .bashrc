@@ -34,10 +34,17 @@ alias sudo="sudo -E "
 alias ll="ls -la"
 alias mvnc="sh ~/work/mvnc.sh"
 alias glog="git log --graph --abbrev-commit --decorate --oneline"
-alias pull-all="sh ~/work/pull-all.sh"
+alias logs-eddie="sh ~/work/logs-eddie.sh"
+alias rgit="python ~/work/rgit.py"
 
 export JAVA_HOME=/usr/lib/jvm/default
-export M2_HOME=/home/amonos/apache-maven-3.5.0
+export M2_HOME=$HOME/apache-maven-3.6.0
+
 export PATH=$PATH:$M2_HOME/bin
+
+export JMETERHOME=/home/amonos/IdeaProjects/eddie/eddie-performance/jmeter
+export ROOTDIR=/home/amonos/eddie-performance
+
+export GOPATH=$HOME/GolandProjects
 
 #unset SSH_ASKPASS
