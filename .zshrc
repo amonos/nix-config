@@ -108,7 +108,9 @@ export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 export EDITOR=nvim
 
 alias ll="ls -la"
-alias rgit="python ~/work/rgit.py"
+alias rgit="python ~/work/nix-config/rgit.py"
+alias gstat="git status"
+alias glog="git log --graph --abbrev-commit --decorate --oneline"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
