@@ -107,6 +107,7 @@ export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 
 export EDITOR=nvim
 
+alias sudo="sudo -E"
 alias ll="ls -la"
 alias rgit="python ~/work/nix-config/rgit.py"
 alias gstat="git status"
