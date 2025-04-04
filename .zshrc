@@ -113,6 +113,15 @@ alias rgit="python ~/work/nix-config/rgit.py"
 alias gstat="git status"
 alias glog="git log --graph --abbrev-commit --decorate --oneline"
 
+alias auth-aws="aws sso login --profile lab; aws sso login --profile prod"
+alias kdo1="export KUBECONFIG=~/.kube/config_do1; kubectl"
+alias kdev="export KUBECONFIG=~/.kube/config_dev; kubectl"
+alias kstg="export KUBECONFIG=~/.kube/config_stg; kubectl"
+alias kca1="export KUBECONFIG=~/.kube/config_ca1; kubectl"
+alias kau1="export KUBECONFIG=~/.kube/config_au1; kubectl"
+alias keu2="export KUBECONFIG=~/.kube/config_eu2; kubectl"
+alias kus1="export KUBECONFIG=~/.kube/config_us1; kubectl"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
