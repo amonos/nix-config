@@ -125,9 +125,3 @@ alias kus1="export KUBECONFIG=~/.kube/config_us1; kubectl"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export JAVA_8_VERSION="8.0.442-zulu"
-export JAVA_17_VERSION="17.0.14-zulu"
-
-alias java8="sdk use java $JAVA_8_VERSION"
-alias java17="sdk use java $JAVA_17_VERSION"
